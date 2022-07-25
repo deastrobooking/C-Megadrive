@@ -7,25 +7,30 @@
 #include <cstring>
 using namespace std;
 
-int vowelChk(char);
+// Function Prototype of Vowel Chkr
+int vowelChkr(char);
+
 int main(){
-   char s[50], t[50];
+   char a[50], b[50];
    int c, d = 0;
    cout<<"Enter the word you would like to delete the vowels from?\n";
-   cin>>s;
-   for(c = 0; s[c] != '\0'; c++) {
-      // check for If not a vowel
-      if(vowelChk(s[c]) == 0){
-         t[d] = s[c];
-         d++;
+   cin>>a;
+   for(c = 0; a[c] != '\0'; c++) { // Post Increment Operator 
+      // Conditional statement calling custom vowel chckr function
+      if(vowelChkr(a[c]) == 0){
+         b[d] = a[c];
+         d++; // Post Increment Operator 
       }
    }
-   t[d] = '\0';
-   strcpy(s, t);
-   cout<<"String after delete vowels:"<<s;
+   b[d] = '\0';
+   strcpy(a, b);
+   // String Output 
+   cout<<"String after delete vowels:"<<a;
    return 0;
 }
-int vowelChk(char ch){
+
+// Function that checks for Vowels 
+int vowelChkr(char ch){
    if (ch == 'a' || ch == 'A' || ch == 'e' || ch == 'E' || ch == 'i' || ch == 'I' || ch =='o' || ch=='O' || ch == 'u' || ch == 'U')
       return 1;
    else
